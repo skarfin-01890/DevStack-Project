@@ -3,7 +3,7 @@ import LogoImg from "../assets/logo-text.png"
 
 const Footer = () => {
 	return (
-		<div className='container mx-auto'>
+		<div className='container mx-auto mt-50'>
 		<div className='flex justify-between '>
 			<div  className='space-y-3'>
 				<div>

@@ -4,7 +4,7 @@ import LogoImg from "../assets/logo-text.png"
 
 const Navbar = () => {
 	return (
-		<div className='bg-white border border-gray-100 sticky top-0'>
+		<div className='bg-white border z-50 border-gray-100 sticky top-0'>
 			<div className='flex justify-between container mx-auto mt-6'>
 <div>
 	<img src={LogoImg} alt="" />
