@@ -36,7 +36,7 @@ const [selectedTechnoloy , setSelectedTechnology]=useState([])
 			<p className='text-gray-500 mt-4'>Pick one technology per category to build your ideal stack.</p>
 			<div className='flex justify-between mt-16'>
 
-				<div className='md:grid grid-cols-3 gap-8 '>
+				<div className=' grid  lg:grid-cols-3 gap-8 '>
 					{
 						technologies.map((technology:ITechnology)=>{
 							return(<TechnologyCard selectedTechnology={selectedTechnoloy} setSelectedTechnology={setSelectedTechnology}key={technology.id} technology={technology}></TechnologyCard>
@@ -64,7 +64,7 @@ selectedTechnoloy.length>0?`${selectedTechnoloy.length} ${
 									<h1 className='font-bold'>{selectTechnology.name}</h1>
 									<p className='text-gray-500'>{selectTechnology.category}</p>
 									</div>
-									<span onClick={()=>handleRemoveTechnology(selectTechnology)} className='fles justify-center items-center text-red-600 font-bold'><RiDeleteBin6Fill /> </span>
+									<span onClick={()=>handleRemoveTechnology(selectTechnology)} className='fles justify-center items-center text-gray-600 font-bold text-2xl cursor-pointer'>✕ </span>
 								</div>
 							)
 						})

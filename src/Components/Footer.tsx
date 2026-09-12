@@ -4,7 +4,7 @@ import LogoImg from "../assets/logo-text.png"
 const Footer = () => {
 	return (
 		<div className='container mx-auto mt-50'>
-		<div className='flex justify-between '>
+		<div className='md:flex justify-between sm:grid grid-cols-2 '>
 			<div  className='space-y-3'>
 				<div>
 <img src={LogoImg} alt="" />
