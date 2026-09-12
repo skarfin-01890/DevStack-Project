@@ -4,7 +4,18 @@ import type { ITechnology } from '../Types/TechnologyType';
 import { FaStar } from 'react-icons/fa';
 import { toast } from 'react-toastify';
 
-const TechnologyCard = ({technology,selectedTechnology,setSelectedTechnology}:{technology:ITechnology}) => {
+
+interface TechnologyCardProps {
+  technology: ITechnology;
+  selectedTechnology: ITechnology[];
+  setSelectedTechnology: React.Dispatch<React.SetStateAction<ITechnology[]>>;
+}
+
+const TechnologyCard = ({
+  technology,
+  selectedTechnology,
+  setSelectedTechnology,
+}: TechnologyCardProps) => {
 	const [Btn,setBtn]=useState(false)
 	const handleBtn=()=>{
 setBtn(true)
@@ -12,7 +23,7 @@ toast.success(`${technology.name} is Added to Stack Successfully`)
 
 setSelectedTechnology([...selectedTechnology,technology])
 	}
-	console.log(selectedTechnology)
+
 	return (
 		<div className="card w-96 bg-base-100 border border-gray-300 p-4 rounded-2xl  ">
   <div className="card-body space-y-4  ">

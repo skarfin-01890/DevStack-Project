@@ -1,15 +1,16 @@
-import React, { use, useState } from 'react';
 
 
 
+
+import { use, useState } from 'react';
 import type { ITechnology } from '../Types/TechnologyType';
-import { FcRating } from 'react-icons/fc';
-import { FaStar } from 'react-icons/fa';
+
+
 import TechnologyCard from './TechnologyCard';
-import { TiDeleteOutline } from 'react-icons/ti';
-import { RiDeleteBin6Fill } from 'react-icons/ri';
+
+;
 import { toast } from 'react-toastify';
-import { BsListNested } from 'react-icons/bs';
+
 interface TechnologyProps{
 	technologyPromise:Promise<ITechnology[]>
 }
@@ -19,15 +20,21 @@ const handleRemoveAll=()=>{
 	setSelectedTechnology([])
 	toast("All Technologies are Removed From Stack")
 }
-	const handleRemoveTechnology=(selectTechnology)=>{
+	const handleRemoveTechnology = (selectTechnology: ITechnology) =>{
+		console.log("tech",selectTechnology)
 
-const restTechnology=selectedTechnoloy.filter(seltTechnology=>seltTechnology.name !=selectTechnology.name )
+const restTechnology = selectedTechnoloy.filter(
+  (seltTechnology: ITechnology) =>
+    seltTechnology.name !== selectTechnology.name
+);
+
 setSelectedTechnology(restTechnology)
 toast.error(`${selectTechnology.name} is removed Succesfully`)
 
 	}
 
-const [selectedTechnoloy , setSelectedTechnology]=useState([])
+ const [selectedTechnoloy, setSelectedTechnology] =
+    useState<ITechnology[]>([]);
 	const technologies=use(technologyPromise);
 	console.log(technologies)
 	return (
@@ -56,7 +63,7 @@ selectedTechnoloy.length>0?`${selectedTechnoloy.length} ${
 					{
 						selectedTechnoloy.map((selectTechnology)=>{
 							return(
-								<div className='flex  items-center justify-between border border-gray-500 py-2 px-1 rounded-2xl'>
+								<div key={selectTechnology.id} className='flex  items-center justify-between border border-gray-500 py-2 px-1 rounded-2xl'>
 									<div className='w-8 h-8'>
 										<img src={selectTechnology.icon} alt="" />
 									</div>

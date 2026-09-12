@@ -1,6 +1,3 @@
-
-
-
 # Project name: DevStack Project
 
 #### A little description ###
@@ -11,7 +8,7 @@ DevStack is a web application where users can explore different web development 
 1. HTML
 2. CSS
 3. Javascript
-4. TypeScript(partially)
+4. TypeScript
 5. React
 6. Tailwind
 

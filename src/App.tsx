@@ -1,9 +1,10 @@
-import React, { Suspense } from 'react';
+
 import Navbar from './Components/Navbar';
 import Banner from './Components/Banner';
 import Footer from './Components/Footer';
 import Technologies from './Components/Technologies';
 import type { ITechnology } from './Types/TechnologyType';
+import { Suspense } from 'react';
 
 const technologyFetch=async():Promise <ITechnology[]>=>{
 const res=await fetch('/data.json');

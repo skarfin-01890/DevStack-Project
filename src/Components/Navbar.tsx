@@ -1,5 +1,5 @@
 
-import React from 'react';
+
 import LogoImg from "../assets/logo-text.png";
 
 const Navbar = () => {
@@ -46,7 +46,7 @@ const Navbar = () => {
 						<a>Contact</a>
 					</nav>
 
-					
+
 					<div className="flex gap-4">
 						<button>Sign In</button>
 
