@@ -4,7 +4,7 @@ import React from 'react';
 import BannerImg from "../assets/banner-stack.png"
 const Banner = () => {
 	return (
-		<div className='container mx-auto mt-12 flex justify-between items-center  '>
+		<div className='container mx-auto mt-12 md:flex justify-between items-center  '>
 			<div className='space-y-8'>
 <h1 className='font-extrabold text-6xl'>Build Your Ideal <br></br><span className="bg-gradient-to-r from-[#FF5722] via-[#D81B7D] to-[#7C3AED] bg-clip-text text-transparent">
 Development Stack</span></h1>

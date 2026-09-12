@@ -36,7 +36,7 @@ const [selectedTechnoloy , setSelectedTechnology]=useState([])
 			<p className='text-gray-500 mt-4'>Pick one technology per category to build your ideal stack.</p>
 			<div className='flex justify-between mt-16'>
 
-				<div className='grid grid-cols-3 gap-8 '>
+				<div className='md:grid grid-cols-3 gap-8 '>
 					{
 						technologies.map((technology:ITechnology)=>{
 							return(<TechnologyCard selectedTechnology={selectedTechnoloy} setSelectedTechnology={setSelectedTechnology}key={technology.id} technology={technology}></TechnologyCard>
