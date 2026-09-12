@@ -1,4 +1,4 @@
-import React, { use } from 'react';
+import React, { use, useState } from 'react';
 
 
 
@@ -10,7 +10,7 @@ interface TechnologyProps{
 	technologyPromise:Promise<ITechnology[]>
 }
 const Technologies = ({technologyPromise}:TechnologyProps) => {
-
+const [selectedTechnoloy , setSelectedTechnology]=useState([])
 	const technologies=use(technologyPromise);
 	console.log(technologies)
 	return (
@@ -22,13 +22,27 @@ const Technologies = ({technologyPromise}:TechnologyProps) => {
 				<div className='grid grid-cols-3 gap-8 '>
 					{
 						technologies.map((technology:ITechnology)=>{
-							return(<TechnologyCard key={technology.id} technology={technology}></TechnologyCard>
+							return(<TechnologyCard selectedTechnology={selectedTechnoloy} setSelectedTechnology={setSelectedTechnology}key={technology.id} technology={technology}></TechnologyCard>
 							)
 						})
 					}
 				</div>
-				<div>
-					Name:Arefin
+				<div className='p-10  shadow-sm h-80 rounded-2xl space-y-3'>
+					<h2 className='font-bold text-2xl'>Your Stack</h2>
+					<p className='text-gray-400'>No Technologies Select yet.</p>
+					{
+						selectedTechnoloy.map((selectTechnology)=>{
+							return(
+								<div className='flex gap-3'>
+									<div className='w-8 h-8'>
+										<img src={selectTechnology.icon} alt="" />
+									</div>
+									<h1>{selectTechnology.name}</h1>
+								</div>
+							)
+						})
+					}
+					<p className='text-gray-400 p-6 rounded-2xl border border-dashed border-gray-200 mt-30'>Your Stack is Empty</p>
 				</div>
 			</div>
 		</div>

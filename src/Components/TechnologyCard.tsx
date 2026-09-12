@@ -1,9 +1,18 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import type { ITechnology } from '../Types/TechnologyType';
 import { FaStar } from 'react-icons/fa';
+import { toast } from 'react-toastify';
 
-const TechnologyCard = ({technology}:{technology:ITechnology}) => {
+const TechnologyCard = ({technology,selectedTechnology,setSelectedTechnology}:{technology:ITechnology}) => {
+	const [Btn,setBtn]=useState(false)
+	const handleBtn=()=>{
+setBtn(true)
+toast.success(`${technology.name} is Added to Stack Successfully`)
+
+setSelectedTechnology([...selectedTechnology,technology])
+	}
+	console.log(selectedTechnology)
 	return (
 		<div className="card w-96 bg-base-100 border border-gray-300 p-4 rounded-2xl  ">
   <div className="card-body space-y-4  ">
@@ -23,7 +32,17 @@ const TechnologyCard = ({technology}:{technology:ITechnology}) => {
 {technology.rating}</span>
 	</div>
     <div className="mt-6">
-      <button className="btn btn-primary w-full bg-black text-white py-3 rounded-2xl">Add to Stock</button>
+
+      <button onClick={()=>{handleBtn()}} disabled={Btn} className="btn btn-primary w-full bg-black text-white py-3 rounded-2xl disabled:bg-gradient-to-r from-[#EC4899] to-[#8B5CF6]
+disabled:cursor-not-allowed">{
+
+`${Btn?"Added to Stack Successfully":"Add to Stack"}`
+
+
+
+
+
+		}</button>
     </div>
   </div>
 </div>
